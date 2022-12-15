@@ -1,0 +1,14 @@
+name: MX3Economy
+version: '${version}'
+main: com.dev.migx3.mx3economy.MX3Economy
+api-version: 1.19
+authors: [ lcly ]
+description: A simple economy plugin
+
+commands:
+  profile:
+    description: "A command to get and manage profiles"
+  coins:
+    aliases:
+      - balance
+      - money

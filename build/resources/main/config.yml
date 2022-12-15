@@ -1,0 +1,12 @@
+Mongo:
+  Host: localhost
+  Port: 27017
+  Database: MX3Economy
+  Enabled: true
+
+help:
+  profile-usage:
+    - "/profile search <player>"
+    - "/profile delete <player>"
+  coins-usage:
+    - "/coins give <player> <quantity>"
