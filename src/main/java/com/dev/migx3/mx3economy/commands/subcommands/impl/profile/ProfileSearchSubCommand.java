@@ -52,16 +52,15 @@ public class ProfileSearchSubCommand implements SubCommand {
         Document profileDocument = this.profileManager.getProfile(uuid);
 
         if (this.profileManager.getProfilesInCache().containsKey(uuid.toString())) {
-            player.sendMessage(ChatColor.GREEN + "Data was found in cache");
+            player.sendMessage(ChatColor.GREEN + "[CACHE]");
         } else {
-            player.sendMessage(ChatColor.GREEN + "Data was found in Database");
+            player.sendMessage(ChatColor.GREEN + "[DATABASE]");
             System.out.println(this.profileManager.getProfilesInCache().size());
             this.profileManager.addInCache(uuid, profileDocument);
         }
 
         player.playSound(player, Sound.ENTITY_FIREWORK_ROCKET_LAUNCH, 100.0F, 100.0F);
 
-        player.sendMessage("");
         player.sendMessage(ChatColor.GREEN + "Name: " + profileDocument.getString("name"));
         player.sendMessage(ChatColor.GREEN + "UUID: " + profileDocument.getString("uuid"));
         player.sendMessage(ChatColor.GREEN + "IP: " + profileDocument.getString("ip"));

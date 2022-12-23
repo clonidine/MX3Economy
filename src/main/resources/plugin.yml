@@ -7,8 +7,10 @@ description: A simple economy plugin
 
 commands:
   profile:
-    description: "A command to get and manage profiles"
+    description: '§eA command to get and manage profiles'
   coins:
     aliases:
       - balance
       - money
+  sell:
+    description: '§eSell items using this command'

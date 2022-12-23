@@ -1,7 +1,7 @@
-package com.dev.migx3.mx3economy.db.impl;
+package com.dev.migx3.mx3economy.database.impl;
 
 import com.dev.migx3.mx3economy.MX3Economy;
-import com.dev.migx3.mx3economy.db.Database;
+import com.dev.migx3.mx3economy.database.Database;
 import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
 import com.mongodb.MongoSocketOpenException;
@@ -32,15 +32,13 @@ public class MongoDB implements Database {
 
             mongoDatabase = mongoClient.getDatabase(plugin.getConfig().getString("Mongo.Database"));
         } catch (MongoSocketOpenException exception) {
-            Bukkit.getConsoleSender().sendMessage("" + ChatColor.RED + "Error connecting to Database");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Error connecting to Database");
         }
     }
 
     public void insert(Document document, String collectionName) {
         getCollection(collectionName).insertOne(document);
     }
-
-    public void query() {}
 
     public void close() {
         mongoClient.close();

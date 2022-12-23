@@ -13,10 +13,10 @@ public class PlayerManager {
     private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 
     public void playersInCacheCleanup() {
-        this.executor.scheduleAtFixedRate(this.playersInCache::clear, 0L, 3L, TimeUnit.MINUTES);
+        executor.scheduleAtFixedRate(playersInCache::clear, 0L, 3L, TimeUnit.MINUTES);
     }
 
     public Set<UUID> getPlayersInCache() {
-        return this.playersInCache;
+        return playersInCache;
     }
 }

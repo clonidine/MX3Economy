@@ -23,6 +23,8 @@ repositories {
 dependencies {
     implementation 'org.jetbrains:annotations:23.0.0'
     compileOnly 'org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT'
+    implementation 'redis.clients:jedis:3.3.0'
+    compileOnly 'redis.clients:jedis:3.3.0'
     implementation 'org.mongodb:mongodb-driver:3.12.0'
     implementation 'com.google.guava:guava:26.0-jre'
     implementation("com.github.KevinPriv:MojangAPI:1.0")

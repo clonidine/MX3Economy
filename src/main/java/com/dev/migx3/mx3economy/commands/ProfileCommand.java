@@ -30,8 +30,8 @@ public class ProfileCommand implements CommandExecutor, TabCompleter {
         this.plugin = plugin;
         Objects.requireNonNull(plugin.getCommand("profile")).setExecutor(this);
         Objects.requireNonNull(plugin.getCommand("profile")).setTabCompleter(this);
-        this.subCommands.add(new ProfileSearchSubCommand(plugin));
-        this.subCommands.add(new ProfileDeleteSubCommand(plugin));
+        subCommands.add(new ProfileSearchSubCommand(plugin));
+        subCommands.add(new ProfileDeleteSubCommand(plugin));
     }
 
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
@@ -47,7 +47,7 @@ public class ProfileCommand implements CommandExecutor, TabCompleter {
         }
 
         if (args.length < 1) {
-            player.sendMessage(Objects.requireNonNull(this.plugin.getConfig().getString("help.profile-usage")));
+            player.sendMessage(Objects.requireNonNull(plugin.getConfig().getString("help.profile-usage")));
             return false;
         }
 

@@ -2,7 +2,7 @@ package com.dev.migx3.mx3economy.commands.subcommands.impl.coins;
 
 import com.dev.migx3.mx3economy.MX3Economy;
 import com.dev.migx3.mx3economy.commands.subcommands.SubCommand;
-import com.dev.migx3.mx3economy.db.Database;
+import com.dev.migx3.mx3economy.database.Database;
 import com.dev.migx3.mx3economy.managers.PlayerManager;
 import com.dev.migx3.mx3economy.managers.ProfileManager;
 import com.mongodb.client.model.Filters;
@@ -55,7 +55,7 @@ public class CoinsGiveSubCommand implements SubCommand {
 
             try {
                 targetUUID = MojangAPI.getUUID(args[1]);
-            } catch (InvalidPlayerException|IOException|APIException|NullPointerException e) {
+            } catch (InvalidPlayerException | IOException | APIException | NullPointerException e) {
                 player.sendMessage(ChatColor.RED + "Player not found");
                 return false;
             }
@@ -90,7 +90,7 @@ public class CoinsGiveSubCommand implements SubCommand {
             double targetTotalCoins = targetDocument.getDouble("coins");
 
             if (playerTotalCoins < value) {
-                player.sendMessage("" + ChatColor.RED + "You don't have enough money");
+                player.sendMessage(ChatColor.RED + "You don't have enough money");
                 return false;
             }
 

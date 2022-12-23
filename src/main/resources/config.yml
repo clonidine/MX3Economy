@@ -4,9 +4,18 @@ Mongo:
   Database: MX3Economy
   Enabled: true
 
+Redis:
+  Host: localhost
+  Port: 6379
+
 help:
   profile-usage:
-    - "/profile search <player>"
-    - "/profile delete <player>"
+    - '/profile search <player>'
+    - '/profile delete <player>'
   coins-usage:
-    - "/coins give <player> <quantity>"
+    - '/coins give <player> <quantity>'
+
+items:
+  item1:
+    material: DIAMOND_BLOCK
+    price: 50.0
